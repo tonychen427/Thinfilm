@@ -1,0 +1,27 @@
+<ion-header>
+  <ion-navbar> <ion-title text-center> {{this.note.value.id === '' ? 'New Note' : 'Edit Note'}} </ion-title> </ion-navbar>
+</ion-header>
+<ion-content padding>
+  <form [formGroup]="note" (ngSubmit)="submitForm()">
+    <ion-item>
+      <ion-label>Note Title</ion-label>
+      <ion-input type="text" formControlName="title"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label>Note Context</ion-label>
+      <ion-textarea formControlName="context"></ion-textarea>
+    </ion-item>
+    <ion-grid>
+      <ion-row justify-content-around>
+        <ion-col col-3>
+          <button ion-button type="cancel">Cancel</button>
+        </ion-col>
+        <ion-col col-3>
+          <button ion-button type="submit" [disabled]="!note.valid">
+            Submit
+          </button>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+  </form>
+</ion-content>

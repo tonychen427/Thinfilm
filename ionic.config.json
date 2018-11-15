@@ -1,6 +1,8 @@
 {
   "name": "Thinfilm",
-  "integrations": {},
+  "integrations": {
+    "cordova": {}
+  },
   "type": "ionic-angular",
   "pro_id": "c4fecd26"
 }
